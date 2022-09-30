@@ -1,0 +1,47 @@
+*,::before,::after{
+    @include reset;
+}
+
+body {
+    @include body;
+}
+main {
+    background: $bg-lightgray;
+}
+.header-titre{
+    height: 60px;
+    font-family: $police-titre;
+    @include flexMid(flex,center,center,row);
+    position: relative;
+
+    a{
+        position: absolute;
+        left: 15px;
+        color: black;
+    }
+}
+img {
+    width: 100%;
+}
+
+.sous-titre{
+    @include flexMid(flex,center,space-around,row);
+    font-family: $police-titre;
+    font-size: 13px;
+
+    img{
+        width: 20px;
+    }
+}
+.titre-bloc{
+    font-size: 10px;
+    font-weight:normal;
+}
+.bloc-containers{
+    // @include flexMid(flex,center,center,column);
+    // margin: 0 auto;
+}
+.card {
+    @include cards-menu;
+    margin: 0 auto;
+}

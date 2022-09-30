@@ -1,0 +1,96 @@
+@mixin reset{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+@mixin body {
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+@mixin flexMid($display,$align,$justify,$direction){
+    display: $display;
+    align-items: $align;
+    justify-content: $justify;
+    flex-direction:$direction ;
+}
+@mixin buttonMenu{
+    border-radius: 60px;
+    height: 50px;
+    width: 70%;
+    max-width: 240px;
+    border: none;
+    background: linear-gradient(#FF79DA,#9356DC);
+    box-shadow: $box-shadow;
+}
+
+
+@mixin buttonFunctioning{
+    width: 90%;
+    height: 60px;
+    padding: 10px;
+    border-radius: 15px;
+    border: none;
+    background: $bg-lightgray;
+    box-shadow: $box-shadow;
+
+}
+
+@mixin cards-menu{
+    width: 90%;
+    height: 60px;
+    padding: 10px;
+    border-radius: 15px;
+    border: none;
+    background: white;
+    box-shadow: $box-shadow;
+}
+@mixin numeroCircle{
+    position: absolute;
+    left: -10px;
+    background:$primary-color;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+}
+
+@mixin images{
+    width: 100%;
+    height: 160px;
+    border-radius: 10px 10px 0 0;
+    object-fit: cover;
+    object-position: center;
+    
+}
+
+
+@mixin footer{
+    background: rgb(54, 54, 54);
+    padding-left: 15px;
+    font-family: 'Shrikhand', cursive;
+    color: white;
+    margin-bottom: 5px;
+    height: 160px;
+}
+@mixin contact{
+    text-decoration: none;
+    color: white;
+    font-size: small;
+    font-family: Roboto,sans-serif;
+    margin: 10px;
+}
+@mixin large-mobile{
+    @media screen and (min-width:map-get($breakpoints,largemobile)) {
+        @content;
+    }
+}
+@mixin tablette{
+    @media screen and(min-width:map-get($breakpoints,tablette)) {
+        @content;
+    }
+}
+@mixin laptop{
+    @media screen and(min-width:map-get($breakpoints,laptop)) {
+        @content;
+    }
+}

@@ -1,0 +1,53 @@
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+body {
+  height: 100vh;
+  font-family: 'Roboto', sans-serif; }
+
+main {
+  background: #f6f6f6; }
+
+.header-titre {
+  height: 60px;
+  font-family: Shrikhand, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  position: relative; }
+  .header-titre a {
+    position: absolute;
+    left: 15px;
+    color: black; }
+
+img {
+  width: 100%; }
+
+.sous-titre {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+  font-family: Shrikhand, sans-serif;
+  font-size: 13px; }
+  .sous-titre img {
+    width: 20px; }
+
+.titre-bloc {
+  font-size: 10px;
+  font-weight: normal; }
+
+.card {
+  width: 90%;
+  height: 60px;
+  padding: 10px;
+  border-radius: 15px;
+  border: none;
+  background: white;
+  box-shadow: 2px 2px 8px -3px rgba(0, 0, 0, 0.75);
+  margin: 0 auto; }
+
+/*# sourceMappingURL=menufrance.css.map */

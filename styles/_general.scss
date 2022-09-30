@@ -1,0 +1,166 @@
+*,::before,::after{
+    @include reset;
+}
+body{
+    @include body;
+}
+header {
+    @include flexMid(flex,center,center,column);
+    height: 400px;
+    .localisation{
+        margin-top: 20px;
+        background: rgb(234, 234, 234);
+        width: 100%;
+        height: 44px;
+        text-align: center;
+        @include flexMid(flex,center,center,row);
+        .fa-location-dot{
+            margin-right: 10px;
+        }
+    }
+}
+.reservation{
+    @include flexMid(flex,center,space-evenly,column);
+    height: 260px;
+    width: 100%;
+    text-align:center;
+    background:rgb(246, 246, 246) ;
+    h1{
+        font-size: 24px;
+        width: 80%
+    }
+    p{
+        font-family: normal;
+    }
+    button{
+        @include buttonMenu;
+        margin-bottom: 20px;
+
+        color: white;
+        a{
+            text-decoration: none;
+            color: white;
+            font-weight: 550;
+        }
+    }
+}
+.titre-fonctionnement{
+    margin-left:8%;
+    @include large-mobile{
+        text-align: center;
+        margin-left: initial;
+    }
+}
+.fonctionnement{
+    height: 300px;
+    @include flexMid(flex,center,space-around,column);
+    button{
+        @include buttonFunctioning;
+        max-width: 300px;
+        position: relative;
+
+        a{
+            @include flexMid(flex,center,space-evenly,row);
+            text-decoration: none;
+            color: black;
+            font-weight: 550;
+            position: relative;
+
+            img{
+                height: 20px
+            }
+        }
+    }
+}
+
+.fonctionnement button:hover{
+    background-color: rgba($primary-color, 0.2);
+
+    i {
+        color: $primary-color
+    }
+    
+}
+
+
+
+.mini-circle{
+    @include numeroCircle;
+}
+.cards-container{
+    @include flexMid(flex,center,space-around,column);
+    height: auto;
+    padding: 40px 0;
+    background: $bg-lightgray;
+    h2 {
+        margin-bottom: 6%;
+        @include laptop{
+            margin-bottom: 3%;
+        }
+    }
+     img{
+        @include images;
+    }
+}
+
+.card{
+    margin: 10px auto;
+    height: 30%;
+    width: 80%;
+    max-width: 400px;
+    position: relative;
+   
+
+    .bloc-new{
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        color: rgb(31, 135, 102);
+        background: $third-color;
+        padding: 5px;
+        font-size: 14px;
+    }
+}
+
+
+.info-cards{
+    @include flexMid(flex,initial,initial,column);
+    background:white;
+    border-radius: 0 0 10px 10px;
+    height: 60px;
+    position: relative;
+
+     img{
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        right: 15px;
+        top: 15px;
+    }
+
+    a{
+        margin-left: 10px;
+        margin-top: 5px;
+        text-decoration: none;
+    }
+
+}
+.info-cards p {
+    font-family: normal;
+}
+
+footer{
+    @include footer();
+       
+    a{
+        @include flexMid(flex,initial,initial,initial);
+        @include contact();
+        
+        i{
+            margin-right: 5px;
+            
+        }
+        
+    }
+}
+// Page principal ⬆️
