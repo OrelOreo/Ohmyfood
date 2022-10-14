@@ -43,20 +43,26 @@ header {
         }
     }
 }
-.titre-fonctionnement{
-    margin-left:8%;
-    @include large-mobile{
-        text-align: center;
-        margin-left: initial;
-    }
+
+.reservation button:hover {
+    opacity: 0.8;
 }
+
 .fonctionnement{
     height: 300px;
-    @include flexMid(flex,center,space-around,column);
+    @include flexMid(flex,center,space-evenly,column);
+
+    h2{
+        width: 80%;
+        @include large-mobile{
+            text-align: center
+        }
+    }
     button{
         @include buttonFunctioning;
         max-width: 300px;
         position: relative;
+
 
         a{
             @include flexMid(flex,center,space-evenly,row);
@@ -65,8 +71,8 @@ header {
             font-weight: 550;
             position: relative;
 
-            img{
-                height: 20px
+            i{
+                color: grey;
             }
         }
     }
@@ -81,8 +87,6 @@ header {
     
 }
 
-
-
 .mini-circle{
     @include numeroCircle;
 }
@@ -92,9 +96,10 @@ header {
     padding: 40px 0;
     background: $bg-lightgray;
     h2 {
-        margin-bottom: 6%;
-        @include laptop{
-            margin-bottom: 3%;
+        width: 80%;
+        margin-bottom: 20px;
+        @include large-mobile{
+            text-align: center
         }
     }
      img{
@@ -129,6 +134,7 @@ header {
     height: 60px;
     position: relative;
     margin-top: -5px;
+    padding: 5px 0;
 
      img{
         width: 20px;
@@ -142,8 +148,21 @@ header {
         margin-left: 10px;
         margin-top: 5px;
         text-decoration: none;
+        &:visited{
+            color: black;
+        }
     }
+}
 
+.info-cards .fa-heart{
+    @include heartIcon;
+    &:active {
+        color: red;
+    }
+}
+.info-cards h3 {
+    font-weight: 400;
+    font-size: 18px;
 }
 .info-cards p {
     font-family: normal;
@@ -151,10 +170,23 @@ header {
 
 footer{
     @include footer();
+
+    h2 {
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
        
-    a{
-        @include flexMid(flex,initial,initial,initial);
+    .contact{
+        @include flexMid(flex,initial,space-around,column);
         @include contact();
+        @include laptop{
+            @include flexMid(flex,center,space-around,column);
+        }
+        a {
+            color: white;
+            font-family: Roboto ,sans-serif;
+            text-decoration: none;
+        }
         
         i{
             margin-right: 5px;
@@ -163,4 +195,3 @@ footer{
         
     }
 }
-// Page principal ⬆️

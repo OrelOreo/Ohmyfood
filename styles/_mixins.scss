@@ -26,7 +26,8 @@
 
 
 @mixin buttonFunctioning{
-    width: 90%;
+    width: 80%;
+    max-width: 400px;
     height: 60px;
     padding: 10px;
     border-radius: 15px;
@@ -37,7 +38,7 @@
 }
 
 @mixin cards-menu{
-    width: 90%;
+    width: 300px;
     height: 60px;
     padding: 10px;
     border-radius: 15px;
@@ -55,6 +56,13 @@
     height: 20px;
 }
 
+@mixin heartIcon {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 18px;
+}
+
 @mixin images{
     width: 100%;
     height: 160px;
@@ -68,6 +76,7 @@
 @mixin footer{
     background: rgb(54, 54, 54);
     padding-left: 15px;
+    padding-top: 10px;
     font-family: 'Shrikhand', cursive;
     color: white;
     margin-bottom: 5px;
@@ -77,8 +86,7 @@
     text-decoration: none;
     color: white;
     font-size: small;
-    font-family: Roboto,sans-serif;
-    margin: 10px;
+    height: 80%;
 }
 @mixin large-mobile{
     @media screen and (min-width:map-get($breakpoints,largemobile)) {
@@ -87,6 +95,11 @@
 }
 @mixin tablette{
     @media screen and(min-width:map-get($breakpoints,tablette)) {
+        @content;
+    }
+}
+@mixin betweenTabAndLaptop{
+    @media screen and(min-width:map-get($breakpoints,betweenTabAndLaptop)) {
         @content;
     }
 }

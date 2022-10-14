@@ -22,20 +22,38 @@ body {
 
 img {
   width: 100%; }
+  @media screen and (min-width: 830px) {
+    img {
+      height: 70vh;
+      object-fit: cover; } }
 
 main {
   background: #f6f6f6;
-  height: 900px; }
+  height: 1000px;
+  margin-top: -40px; }
+  @media screen and (min-width: 1024px) {
+    main {
+      height: 70%; } }
 
 .titre-bloc {
   font-size: 10px;
   font-weight: normal;
-  width: 95%; }
+  width: 95%;
+  background: #f6f6f6; }
+  .titre-bloc h2 {
+    margin-left: 20px; }
+    @media screen and (min-width: 1024px) {
+      .titre-bloc h2 {
+        text-align: center;
+        margin-left: 0; } }
   .titre-bloc h2::after {
     content: '';
     display: block;
     width: 40px;
     border-bottom: 3px solid #99E2D0; }
+    @media screen and (min-width: 1024px) {
+      .titre-bloc h2::after {
+        margin: 0 auto; } }
 
 .bloc-containers {
   display: flex;
@@ -50,12 +68,33 @@ main {
   flex-direction: row;
   font-family: Shrikhand, sans-serif;
   font-size: 13px;
-  width: 100%; }
-  .sous-titre img {
-    width: 20px; }
+  width: 100%;
+  height: 100px;
+  background: #f6f6f6;
+  border-radius: 30px 30px 0 0; }
+  @media screen and (min-width: 750px) {
+    .sous-titre {
+      position: relative;
+      display: block; } }
+  @media screen and (min-width: 750px) {
+    .sous-titre h1 {
+      text-align: center;
+      margin-top: 20px; } }
+
+@media screen and (min-width: 750px) {
+  .fa-heart {
+    position: absolute;
+    top: 40px;
+    right: 15px; } }
+
+@media screen and (min-width: 1024px) {
+  .bloc-cards {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly; } }
 
 .card {
-  width: 90%;
+  width: 300px;
   height: 60px;
   padding: 10px;
   border-radius: 15px;
@@ -90,25 +129,40 @@ button {
   color: white;
   display: block;
   margin: 30px auto 30px; }
+  button:hover {
+    opacity: 0.8; }
 
 footer {
   background: #363636;
   padding-left: 15px;
+  padding-top: 10px;
   font-family: 'Shrikhand', cursive;
   color: white;
   margin-bottom: 5px;
   height: 160px; }
-  footer a {
+  footer h2 {
+    font-size: 18px;
+    margin-bottom: 5px; }
+  footer .contact {
     display: flex;
     align-items: initial;
-    justify-content: initial;
-    flex-direction: initial;
+    justify-content: space-around;
+    flex-direction: column;
     text-decoration: none;
     color: white;
     font-size: small;
-    font-family: Roboto,sans-serif;
-    margin: 10px; }
-    footer a i {
+    height: 80%; }
+    @media screen and (min-width: 1024px) {
+      footer .contact {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column; } }
+    footer .contact a {
+      color: white;
+      font-family: Roboto ,sans-serif;
+      text-decoration: none; }
+    footer .contact i {
       margin-right: 5px; }
 
 /*# sourceMappingURL=menufrance.css.map */
