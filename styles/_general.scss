@@ -89,6 +89,7 @@ header {
 
 .mini-circle{
     @include numeroCircle;
+    @include flexMid(flex,center,center,initial)
 }
 .cards-container{
     @include flexMid(flex,center,space-around,column);
@@ -156,7 +157,7 @@ header {
 
 .info-cards .fa-heart{
     @include heartIcon;
-    &:active {
+    & {
         color: red;
     }
 }

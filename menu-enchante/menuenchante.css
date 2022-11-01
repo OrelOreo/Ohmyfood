@@ -29,11 +29,11 @@ img {
 
 main {
   background: #f6f6f6;
-  height: 100px;
+  height: 1000px;
   margin-top: -40px; }
   @media screen and (min-width: 1024px) {
     main {
-      height: 80%; } }
+      height: 70%; } }
 
 .titre-bloc {
   font-size: 10px;

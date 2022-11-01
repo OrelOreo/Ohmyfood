@@ -104,7 +104,11 @@ header {
   color: white;
   border-radius: 50%;
   width: 20px;
-  height: 20px; }
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: initial; }
 
 .cards-container {
   display: flex;
@@ -171,7 +175,7 @@ header {
   right: 20px;
   top: 20px;
   font-size: 18px; }
-  .info-cards .fa-heart:active {
+  .info-cards .fa-heart {
     color: red; }
 
 .info-cards h3 {

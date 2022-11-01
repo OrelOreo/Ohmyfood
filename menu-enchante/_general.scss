@@ -27,10 +27,10 @@ img {
 }
 main {
     background: $bg-lightgray;
-    height: 100px;
+    height: 1000px;
     margin-top: -40px;
     @include laptop {
-        height: 80%;
+        height: 70%;
     }
 }
 

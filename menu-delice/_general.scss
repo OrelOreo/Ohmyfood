@@ -118,6 +118,38 @@ main {
         }
     }
 }
+
+.card-description {
+    @include cardDescription;
+
+    .txt {
+        @include flexMid(flex,center,space-between,row);
+        width: 90%;
+    }
+}
+
+.anim-card {
+    @include anim-card;
+
+    .fa-solid {
+        @include iconInsideAnimCard;
+    }
+}
+.card:active .anim-card {
+    animation: name 0.6s;
+    opacity: 1
+}
+
+.card:active .fa-solid {
+    transform: rotate(360deg)
+}
+.card:active .card-description{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 90%;
+}
+
 button {
     @include buttonMenu();
     color: white;
@@ -153,5 +185,13 @@ footer{
             
         }
         
+    }
+}
+@include keyframes(name){
+    from {
+        transform: translateX(35px);
+    }
+    to {
+        transform: translateX(0px);
     }
 }

@@ -45,7 +45,43 @@
     border: none;
     background: white;
     box-shadow: $box-shadow;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
 }
+
+@mixin anim-card {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 20%;
+    height: 100%;
+    border-radius: 0 15 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:$third-color;
+    opacity: 0;
+}
+
+@mixin iconInsideAnimCard {
+    color: $third-color;
+    background-color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.6s;
+}
+
+@mixin cardDescription {
+    width: auto;
+    height: 100%;
+    font-size: 16px;
+}
+
 @mixin numeroCircle{
     position: absolute;
     left: -10px;
@@ -105,6 +141,15 @@
 }
 @mixin laptop{
     @media screen and(min-width:map-get($breakpoints,laptop)) {
+        @content;
+    }
+}
+@mixin animate($animation,$duration,$method,$times){
+    animation: $animation $duration $method $times;
+}
+
+@mixin keyframes($name){
+    @keyframes #{$name} {
         @content;
     }
 }
