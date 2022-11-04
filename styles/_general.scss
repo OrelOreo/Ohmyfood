@@ -4,6 +4,52 @@
 body{
     @include body;
 }
+
+.loader-container {
+    @include flexMid(flex,center,center,row);
+    height: 100vh;
+    background-color: #fff;
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    opacity: 0.8;
+    animation: disappearLoader 3s forwards;
+}
+.loader {
+    display: block;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 7px solid transparent;
+    border-top-color: $third-color;
+    animation: spin 2s linear infinite;
+}
+
+.loader::before,.loader::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    border: 7px solid transparent;
+}
+
+.loader::before {
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border-top-color: $primary-color;
+    animation: spin 3s linear infinite;
+}
+
+.loader::after {
+    top: 25px;
+    left: 25px;
+    right: 25px;
+    bottom: 25px;
+    border-top-color: $secondary-color;
+    animation: spin 1.5s linear infinite;
+}
+
 header {
     @include flexMid(flex,center,center,column);
     height: 400px;
@@ -194,5 +240,24 @@ footer{
             
         }
         
+    }
+}
+
+
+@include keyframes(disappearLoader){
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-1000px);
+    }
+}
+
+@include keyframes(spin){
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
     }
 }

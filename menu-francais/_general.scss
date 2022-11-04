@@ -5,6 +5,7 @@
 body {
     @include body;
 }
+  
 
 .header-titre{
     height: 60px;
@@ -100,6 +101,12 @@ main {
 .card {
     @include cards-menu;
     margin: 10px auto 10px;
+    animation: apparition $anim-speed;
+    @for $i from 1 through 4{
+        &:nth-child(#{$i}){
+            animation-delay: $i * 0.2s;
+        }
+    }
 
     h3{
         font-size: 16px;
@@ -108,7 +115,6 @@ main {
 
     p{
         @include flexMid(flex,center,space-between,row);
-        margin-top: 8px;
         font-weight:300;
         font-size: 12px;
 
@@ -118,6 +124,41 @@ main {
         }
     }
 }
+
+
+
+.card-description {
+    @include cardDescription;
+
+    .txt {
+        @include flexMid(flex,center,space-between,row);
+        width: 90%;
+        margin-top: 5px;
+    }
+}
+
+.anim-card {
+    @include anim-card;
+
+    .fa-solid {
+        @include iconInsideAnimCard;
+    }
+}
+.card:active .anim-card {
+    animation: animationCard 0.6s;
+    opacity: 1
+}
+
+.card:active .fa-solid {
+    transform: rotate(360deg)
+}
+.card:active .card-description{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 90%;
+}
+
 button {
     @include buttonMenu();
     color: white;
@@ -155,3 +196,23 @@ footer{
         
     }
 }
+@include keyframes(animationCard){
+    from {
+        transform: translateX(35px);
+    }
+    to {
+        transform: translateX(0px);
+    }
+}
+
+@include keyframes(apparition){
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
