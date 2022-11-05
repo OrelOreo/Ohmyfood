@@ -109,12 +109,11 @@ main {
     }
 
     h3{
-        font-size: 16px;
+        font-size: 14px;
         font-weight: bold;
     }
 
     p{
-        @include flexMid(flex,center,space-between,row);
         font-weight:300;
         font-size: 12px;
 
@@ -131,11 +130,18 @@ main {
     @include cardDescription;
 
     .txt {
-        @include flexMid(flex,center,space-between,row);
-        width: 90%;
+        width: auto;
+        @include flexMid(flex,center,normal,row);
         margin-top: 5px;
+
+        span {
+            position: absolute;
+            right: 5px;
+            transition: transform 0.4s;
+        }
     }
 }
+
 
 .anim-card {
     @include anim-card;
@@ -144,19 +150,26 @@ main {
         @include iconInsideAnimCard;
     }
 }
+
+.card:active span {
+    transform: translateX(-50px);
+}
+
 .card:active .anim-card {
-    animation: animationCard 0.8s;
+    animation: animationCard 0.6s;
     opacity: 1
 }
 
 .card:active .fa-solid {
     transform: rotate(360deg)
 }
-.card:active .card-description{
+
+
+.card:active p{
     white-space: nowrap;
     text-overflow: ellipsis;
+    max-width: 60%;
     overflow: hidden;
-    max-width: 90%;
 }
 
 button {
@@ -202,7 +215,7 @@ footer{
     }
     to {
         transform: translateX(0px);
-    }  
+    }
 }
 
 @include keyframes(apparition){

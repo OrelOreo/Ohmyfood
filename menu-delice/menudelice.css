@@ -115,13 +115,9 @@ main {
   .card:nth-child(4) {
     animation-delay: 0.8s; }
   .card h3 {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold; }
   .card p {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: row;
     font-weight: 300;
     font-size: 12px; }
     .card p span {
@@ -130,15 +126,20 @@ main {
 
 .card-description {
   width: auto;
+  position: relative;
   height: 100%;
   font-size: 16px; }
   .card-description .txt {
+    width: auto;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: normal;
     flex-direction: row;
-    width: 90%;
     margin-top: 5px; }
+    .card-description .txt span {
+      position: absolute;
+      right: 5px;
+      transition: transform 0.4s; }
 
 .anim-card {
   position: absolute;
@@ -163,18 +164,21 @@ main {
     justify-content: center;
     transition: transform 0.6s; }
 
+.card:active span {
+  transform: translateX(-50px); }
+
 .card:active .anim-card {
-  animation: animationCard 0.8s;
+  animation: animationCard 0.6s;
   opacity: 1; }
 
 .card:active .fa-solid {
   transform: rotate(360deg); }
 
-.card:active .card-description {
+.card:active p {
   white-space: nowrap;
   text-overflow: ellipsis;
-  overflow: hidden;
-  max-width: 90%; }
+  max-width: 60%;
+  overflow: hidden; }
 
 button {
   border-radius: 60px;
