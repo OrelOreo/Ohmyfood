@@ -203,10 +203,16 @@ header {
 
 .info-cards .fa-heart{
     @include heartIcon;
-    & {
-        color: red;
-    }
 }
+
+.info-cards .fa-solid {
+    @include gradientHeart;
+}
+
+.info-cards:hover .fa-solid{
+    opacity: 1;
+}
+
 .info-cards h3 {
     font-weight: 400;
     font-size: 18px;
