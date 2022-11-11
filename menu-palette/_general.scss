@@ -24,6 +24,7 @@ img {
     @include betweenTabAndLaptop{
         height: 70vh;
         object-fit:cover;
+        o-object-fit:cover;
     }
 }
 main {
@@ -71,7 +72,7 @@ main {
     width: 100%;
     height: 100px;
     background: $bg-lightgray;
-    border-radius: 30px 30px 0 0;
+    border-radius: 30px 30px 0px 0px;
     @include tablette{
         position: relative;
         display:block;
@@ -102,8 +103,12 @@ main {
 .bloc-cards {
     @include laptop{
         width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        justify-content: space-evenly;
+        -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+                justify-content: space-evenly;
     }
 }
 .card {
@@ -145,6 +150,9 @@ main {
         span {
             position: absolute;
             right: 5px;
+            -webkit-transition: -webkit-transform 0.4s;
+            transition: -webkit-transform 0.4s;
+            -o-transition: transform 0.4s;
             transition: transform 0.4s;
         }
     }
@@ -160,22 +168,28 @@ main {
 }
 
 .card:active span {
+    -webkit-transform: translateX(-50px);
+    -ms-transform: translateX(-50px);
     transform: translateX(-50px);
 }
 
 .card:active .anim-card {
+    -webkit-animation: animationCard 0.6s;
     animation: animationCard 0.6s;
     opacity: 1
 }
 
 .card:active .fa-solid {
-    transform: rotate(360deg)
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
 }
 
 
 .card:active p{
     white-space: nowrap;
-    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+       text-overflow: ellipsis;
     max-width: 60%;
     overflow: hidden;
 }
@@ -219,19 +233,27 @@ footer{
 }
 @include keyframes(animationCard){
     from {
+        -webkit-transform: translateX(35px);
+        -ms-transform: translateX(35px);
         transform: translateX(35px);
     }
     to {
+        -webkit-transform: translateX(0px);
+        -ms-transform: translateX(0px);
         transform: translateX(0px);
     }
 }
 
 @include keyframes(apparition){
     from {
+        -webkit-transform: translateY(-10px);
+        -ms-transform: translateY(-10px);
         transform: translateY(-10px);
         opacity: 0;
     }
     to {
+        -webkit-transform: translateY(0px);
+        -ms-transform: translateY(0px);
         transform: translateY(0px);
         opacity: 1;
     }

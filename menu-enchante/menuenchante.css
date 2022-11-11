@@ -1,5 +1,6 @@
 *, ::before, ::after {
   box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   margin: 0;
   padding: 0; }
 
@@ -25,7 +26,8 @@ img {
   @media screen and (min-width: 830px) {
     img {
       height: 70vh;
-      object-fit: cover; } }
+      object-fit: cover;
+      o-object-fit: cover; } }
 
 main {
   background: #f6f6f6;
@@ -71,7 +73,7 @@ main {
   width: 100%;
   height: 100px;
   background: #f6f6f6;
-  border-radius: 30px 30px 0 0; }
+  border-radius: 30px 30px 0px 0px; }
   @media screen and (min-width: 750px) {
     .sous-titre {
       position: relative;
@@ -95,10 +97,14 @@ main {
 
 .heart-fill {
   color: transparent;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
+  background-image: -o-linear-gradient(#9356DC, #FF79DA);
   background-image: linear-gradient(#9356DC, #FF79DA);
-  background-clip: text;
   -webkit-background-clip: text;
+  background-clip: text;
   opacity: 0;
+  -webkit-transition: opacity 0.7s;
+  -o-transition: opacity 0.7s;
   transition: opacity 0.7s; }
 
 .fa-solid:active {
@@ -107,7 +113,11 @@ main {
 @media screen and (min-width: 1024px) {
   .bloc-cards {
     width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
     justify-content: space-evenly; } }
 
 .card {
@@ -117,6 +127,7 @@ main {
   border-radius: 15px;
   border: none;
   background: white;
+  -webkit-box-shadow: 2px 2px 8px -3px rgba(0, 0, 0, 0.75);
   box-shadow: 2px 2px 8px -3px rgba(0, 0, 0, 0.75);
   cursor: pointer;
   overflow: hidden;
@@ -131,6 +142,8 @@ main {
     animation-delay: 0.6s; }
   .card:nth-child(4) {
     animation-delay: 0.8s; }
+  .card:nth-child(5) {
+    animation-delay: 1s; }
   .card h3 {
     font-size: 14px;
     font-weight: bold; }
@@ -156,6 +169,9 @@ main {
     .card-description .txt span {
       position: absolute;
       right: 5px;
+      -webkit-transition: -webkit-transform 0.4s;
+      transition: -webkit-transform 0.4s;
+      -o-transition: transform 0.4s;
       transition: transform 0.4s; }
 
 .anim-card {
@@ -164,9 +180,15 @@ main {
   bottom: 0;
   width: 20%;
   height: 100%;
-  border-radius: 0 15 15px 0;
+  border-radius: 0px 15px 15px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   background-color: #99E2D0;
   opacity: 0; }
@@ -176,34 +198,55 @@ main {
     width: 20px;
     height: 20px;
     border-radius: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
-    transition: transform 0.6s; }
+    -webkit-transition: -webkit-transform 0.6s;
+    transition: -webkit-transform 0.6s;
+    -o-transition: transform 0.6s;
+    transition: transform 0.6s;
+    transition: transform 0.6s, -webkit-transform 0.6s; }
 
 .card:active span {
+  -webkit-transform: translateX(-50px);
+  -ms-transform: translateX(-50px);
   transform: translateX(-50px); }
 
 .card:active .anim-card {
+  -webkit-animation: animationCard 0.6s;
   animation: animationCard 0.6s;
   opacity: 1; }
 
 .card:active .fa-solid {
+  -webkit-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
   transform: rotate(360deg); }
 
 .card:active p {
   white-space: nowrap;
+  -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
   max-width: 60%;
   overflow: hidden; }
 
 button {
   border-radius: 60px;
+  font-weight: bold;
+  color: white;
   height: 50px;
   width: 70%;
   max-width: 240px;
   border: none;
+  background: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
+  background: -o-linear-gradient(#FF79DA, #9356DC);
   background: linear-gradient(#FF79DA, #9356DC);
+  -webkit-box-shadow: 2px 2px 8px -3px rgba(0, 0, 0, 0.75);
   box-shadow: 2px 2px 8px -3px rgba(0, 0, 0, 0.75);
   cursor: pointer;
   color: white;
@@ -247,14 +290,22 @@ footer {
 
 @keyframes animationCard {
   from {
+    -webkit-transform: translateX(35px);
+    -ms-transform: translateX(35px);
     transform: translateX(35px); }
   to {
+    -webkit-transform: translateX(0px);
+    -ms-transform: translateX(0px);
     transform: translateX(0px); } }
 @keyframes apparition {
   from {
+    -webkit-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
     transform: translateY(-10px);
     opacity: 0; }
   to {
+    -webkit-transform: translateY(0px);
+    -ms-transform: translateY(0px);
     transform: translateY(0px);
     opacity: 1; } }
 

@@ -1,5 +1,6 @@
 @mixin reset{
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
@@ -21,8 +22,11 @@
     width: 70%;
     max-width: 240px;
     border: none;
+    background: -webkit-gradient(linear,left top, left bottom,from(#FF79DA),to(#9356DC));
+    background: -o-linear-gradient(#FF79DA,#9356DC);
     background: linear-gradient(#FF79DA,#9356DC);
-    box-shadow: $box-shadow;
+    -webkit-box-shadow: $box-shadow;
+            box-shadow: $box-shadow;
     cursor: pointer;
 }
 
@@ -35,7 +39,8 @@
     border-radius: 15px;
     border: none;
     background: $bg-lightgray;
-    box-shadow: $box-shadow;
+    -webkit-box-shadow: $box-shadow;
+            box-shadow: $box-shadow;
 
 }
 
@@ -46,7 +51,8 @@
     border-radius: 15px;
     border: none;
     background: white;
-    box-shadow: $box-shadow;
+    -webkit-box-shadow: $box-shadow;
+            box-shadow: $box-shadow;
     cursor: pointer;
     overflow: hidden;
     position: relative;
@@ -58,10 +64,16 @@
     bottom: 0;
     width: 20%;
     height: 100%;
-    border-radius: 0 15 15px 0;
+    border-radius: 0px 15px 15px 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+            justify-content: center;
     background-color:$third-color;
     opacity: 0;
 }
@@ -72,10 +84,20 @@
     width: 20px;
     height: 20px;
     border-radius: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-transition: -webkit-transform 0.6s;
+    transition: -webkit-transform 0.6s;
+    -o-transition: transform 0.6s;
     transition: transform 0.6s;
+    transition: transform 0.6s, -webkit-transform 0.6s;
 }
 
 @mixin cardDescription {
@@ -104,10 +126,14 @@
 }
 @mixin gradientHeart {
     color: transparent;
+    background-image: -webkit-gradient(linear,left top, left bottom,from($primary-color),to($secondary-color));
+    background-image: -o-linear-gradient($primary-color,$secondary-color);
     background-image: linear-gradient($primary-color,$secondary-color);
-    background-clip: text;
-    -webkit-background-clip:text;
+    -webkit-background-clip: text;
+            background-clip: text;
     opacity: 0;
+    -webkit-transition: opacity 0.7s;
+    -o-transition: opacity 0.7s;
     transition: opacity 0.7s;
 }
 
@@ -115,9 +141,10 @@
     width: 100%;
     height: 160px;
     border-radius: 10px 10px 0 0;
-    object-fit: cover;
-    object-position: center;
-    
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center;
+       object-position: center;
 }
 
 

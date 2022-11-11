@@ -184,6 +184,7 @@ header {
     position: relative;
     margin-top: -5px;
     padding: 5px;
+    line-height: 25px;
 
      img{
         width: 20px;
@@ -195,6 +196,7 @@ header {
 
     a{
         text-decoration: none;
+        color: black;
         &:visited{
             color: black;
         }

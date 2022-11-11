@@ -1,5 +1,6 @@
 *, ::before, ::after {
   box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   margin: 0;
   padding: 0; }
 
@@ -92,7 +93,10 @@ header {
     width: 70%;
     max-width: 240px;
     border: none;
+    background: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
+    background: -o-linear-gradient(#FF79DA, #9356DC);
     background: linear-gradient(#FF79DA, #9356DC);
+    -webkit-box-shadow: 2px 2px 8px -3px rgba(0, 0, 0, 0.75);
     box-shadow: 2px 2px 8px -3px rgba(0, 0, 0, 0.75);
     cursor: pointer;
     margin-bottom: 20px; }
@@ -127,6 +131,7 @@ header {
     border-radius: 15px;
     border: none;
     background: #f6f6f6;
+    -webkit-box-shadow: 2px 2px 8px -3px rgba(0, 0, 0, 0.75);
     box-shadow: 2px 2px 8px -3px rgba(0, 0, 0, 0.75);
     max-width: 300px;
     position: relative; }
@@ -179,7 +184,9 @@ header {
     width: 100%;
     height: 160px;
     border-radius: 10px 10px 0 0;
+    -o-object-fit: cover;
     object-fit: cover;
+    -o-object-position: center;
     object-position: center; }
 
 .card {
@@ -207,7 +214,8 @@ header {
   height: 60px;
   position: relative;
   margin-top: -5px;
-  padding: 5px; }
+  padding: 5px;
+  line-height: 25px; }
   .info-cards img {
     width: 20px;
     height: 20px;
@@ -215,7 +223,8 @@ header {
     right: 15px;
     top: 15px; }
   .info-cards a {
-    text-decoration: none; }
+    text-decoration: none;
+    color: black; }
     .info-cards a:visited {
       color: black; }
 
@@ -229,10 +238,14 @@ header {
 
 .info-cards .fa-solid {
   color: transparent;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#9356DC), to(#FF79DA));
+  background-image: -o-linear-gradient(#9356DC, #FF79DA);
   background-image: linear-gradient(#9356DC, #FF79DA);
-  background-clip: text;
   -webkit-background-clip: text;
+  background-clip: text;
   opacity: 0;
+  -webkit-transition: opacity 0.7s;
+  -o-transition: opacity 0.7s;
   transition: opacity 0.7s; }
 
 .info-cards:active .fa-solid {
