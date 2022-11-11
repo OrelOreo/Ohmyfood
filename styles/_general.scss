@@ -104,7 +104,8 @@ header {
             text-align: center
         }
     }
-    button{
+    div{
+        @include flexMid(flex,center,center,row);
         @include buttonFunctioning;
         max-width: 300px;
         position: relative;
@@ -116,6 +117,7 @@ header {
             color: black;
             font-weight: 550;
             position: relative;
+            width: 100%;
 
             i{
                 color: grey;
@@ -124,7 +126,7 @@ header {
     }
 }
 
-.fonctionnement button:hover{
+.fonctionnement div:hover{
     background-color: rgba($primary-color, 0.2);
 
     i {
@@ -181,7 +183,7 @@ header {
     height: 60px;
     position: relative;
     margin-top: -5px;
-    padding: 5px 0;
+    padding: 5px;
 
      img{
         width: 20px;
@@ -192,8 +194,6 @@ header {
     }
 
     a{
-        margin-left: 10px;
-        margin-top: 5px;
         text-decoration: none;
         &:visited{
             color: black;
@@ -203,13 +203,14 @@ header {
 
 .info-cards .fa-heart{
     @include heartIcon;
+    pointer-events: stroke;
 }
 
 .info-cards .fa-solid {
     @include gradientHeart;
 }
 
-.info-cards:hover .fa-solid{
+.info-cards:active .fa-solid{
     opacity: 1;
 }
 

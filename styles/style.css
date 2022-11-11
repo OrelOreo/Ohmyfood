@@ -86,6 +86,8 @@ header {
     font-family: normal; }
   .reservation button {
     border-radius: 60px;
+    font-weight: bold;
+    color: white;
     height: 50px;
     width: 70%;
     max-width: 240px;
@@ -113,7 +115,11 @@ header {
     @media screen and (min-width: 450px) {
       .fonctionnement h2 {
         text-align: center; } }
-  .fonctionnement button {
+  .fonctionnement div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
     width: 80%;
     max-width: 400px;
     height: 60px;
@@ -124,7 +130,7 @@ header {
     box-shadow: 2px 2px 8px -3px rgba(0, 0, 0, 0.75);
     max-width: 300px;
     position: relative; }
-    .fonctionnement button a {
+    .fonctionnement div a {
       display: flex;
       align-items: center;
       justify-content: space-evenly;
@@ -132,13 +138,14 @@ header {
       text-decoration: none;
       color: black;
       font-weight: 550;
-      position: relative; }
-      .fonctionnement button a i {
+      position: relative;
+      width: 100%; }
+      .fonctionnement div a i {
         color: grey; }
 
-.fonctionnement button:hover {
+.fonctionnement div:hover {
   background-color: rgba(147, 86, 220, 0.2); }
-  .fonctionnement button:hover i {
+  .fonctionnement div:hover i {
     color: #9356DC; }
 
 .mini-circle {
@@ -200,7 +207,7 @@ header {
   height: 60px;
   position: relative;
   margin-top: -5px;
-  padding: 5px 0; }
+  padding: 5px; }
   .info-cards img {
     width: 20px;
     height: 20px;
@@ -208,8 +215,6 @@ header {
     right: 15px;
     top: 15px; }
   .info-cards a {
-    margin-left: 10px;
-    margin-top: 5px;
     text-decoration: none; }
     .info-cards a:visited {
       color: black; }
@@ -219,7 +224,8 @@ header {
   right: 20px;
   top: 20px;
   font-size: 18px;
-  cursor: pointer; }
+  cursor: pointer;
+  pointer-events: stroke; }
 
 .info-cards .fa-solid {
   color: transparent;
@@ -229,7 +235,7 @@ header {
   opacity: 0;
   transition: opacity 0.7s; }
 
-.info-cards:hover .fa-solid {
+.info-cards:active .fa-solid {
   opacity: 1; }
 
 .info-cards h3 {

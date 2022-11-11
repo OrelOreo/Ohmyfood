@@ -84,11 +84,19 @@ main {
     }
 }
 .fa-heart{
+    @include heartIcon;
     @include tablette{
         position: absolute;
         top: 40px;
-        right: 15px;
+        right: 15px; 
     }
+}
+.heart-fill {
+    @include gradientHeart;
+}
+
+.fa-solid:active{
+    opacity: 1;
 }
 
 .bloc-cards {
