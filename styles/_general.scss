@@ -205,14 +205,13 @@ header {
 
 .info-cards .fa-heart{
     @include heartIcon;
-    pointer-events: stroke;
 }
 
 .info-cards .fa-solid {
     @include gradientHeart;
 }
 
-.info-cards:active .fa-solid{
+.bloc-heart:active .fa-solid{
     opacity: 1;
 }
 
