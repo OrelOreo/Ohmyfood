@@ -19,7 +19,7 @@ body {
   inset: 0;
   z-index: 100;
   opacity: 0.8;
-  animation: disappearLoader 3s forwards; }
+  animation: disappearLoader 4s forwards; }
 
 .loader {
   display: block;
@@ -184,9 +184,7 @@ header {
     width: 100%;
     height: 160px;
     border-radius: 10px 10px 0 0;
-    -o-object-fit: cover;
     object-fit: cover;
-    -o-object-position: center;
     object-position: center; }
 
 .card {
@@ -231,9 +229,10 @@ header {
 .info-cards .fa-heart {
   position: absolute;
   right: 20px;
-  top: 20px;
+  top: 40px;
   font-size: 18px;
-  cursor: pointer; }
+  cursor: pointer;
+  top: 20px !important; }
 
 .info-cards .fa-solid {
   color: transparent;
@@ -247,11 +246,11 @@ header {
   -o-transition: opacity 0.7s;
   transition: opacity 0.7s; }
 
-.bloc-heart:active .fa-solid {
+.bloc-heart:hover .fa-solid {
   opacity: 1; }
 
 .info-cards h3 {
-  font-weight: 400;
+  font-weight: 500;
   font-size: 18px; }
 
 .info-cards p {

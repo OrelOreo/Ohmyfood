@@ -44,7 +44,7 @@ main {
     background: $bg-lightgray;
 
     h2{
-        margin-left: 20px;
+        margin-left: 5px;
         @include laptop{
             text-align: center;
             margin-left: 0;
@@ -73,30 +73,25 @@ main {
     height: 100px;
     background: $bg-lightgray;
     border-radius: 30px 30px 0px 0px;
-    @include tablette{
-        position: relative;
-        display:block;
-    }
+    position: relative;
     h1{
         @include tablette{
             text-align: center;
             margin-top: 20px;
         }
+        @include betweenMobileAndLargeMobile{
+            margin-left: -45px;
+        }
     }
 }
 .fa-heart{
     @include heartIcon;
-    @include tablette{
-        position: absolute;
-        top: 40px;
-        right: 15px; 
-    }
 }
 .heart-fill {
     @include gradientHeart;
 }
 
-.fa-solid:active{
+.fa-solid:hover{
     opacity: 1;
 }
 
@@ -115,7 +110,7 @@ main {
     @include cards-menu;
     margin: 10px auto 10px;
     animation: apparition $anim-speed;
-    @for $i from 1 through 5{
+    @for $i from 1 through 4{
         &:nth-child(#{$i}){
             animation-delay: $i * 0.2s;
         }
@@ -138,7 +133,6 @@ main {
 }
 
 
-
 .card-description {
     @include cardDescription;
 
@@ -158,35 +152,32 @@ main {
     }
 }
 
-
 .anim-card {
     @include anim-card;
-
+    transition: all 0.5s;
     .fa-solid {
         @include iconInsideAnimCard;
     }
 }
 
-.card:active span {
+.card:hover span {
     -webkit-transform: translateX(-50px);
     -ms-transform: translateX(-50px);
     transform: translateX(-50px);
 }
 
-.card:active .anim-card {
-    -webkit-animation: animationCard 0.6s;
-    animation: animationCard 0.6s;
+.card:hover .anim-card {
+    margin-right: 0;
     opacity: 1
 }
 
-.card:active .fa-solid {
+.card:hover .fa-solid {
     -webkit-transform: rotate(360deg);
     -ms-transform: rotate(360deg);
     transform: rotate(360deg);
 }
 
-
-.card:active p{
+.card:hover p{
     white-space: nowrap;
     -o-text-overflow: ellipsis;
        text-overflow: ellipsis;
@@ -231,27 +222,15 @@ footer{
         
     }
 }
-@include keyframes(animationCard){
-    from {
-        -webkit-transform: translateX(35px);
-        -ms-transform: translateX(35px);
-        transform: translateX(35px);
-    }
-    to {
-        -webkit-transform: translateX(0px);
-        -ms-transform: translateX(0px);
-        transform: translateX(0px);
-    }
-}
 
 @include keyframes(apparition){
-    from {
-        -webkit-transform: translateY(-10px);
-        -ms-transform: translateY(-10px);
-        transform: translateY(-10px);
+    0% {
+        -webkit-transform: translateY(10px);
+        -ms-transform: translateY(10px);
+        transform: translateY(10px);
         opacity: 0;
     }
-    to {
+    100% {
         -webkit-transform: translateY(0px);
         -ms-transform: translateY(0px);
         transform: translateY(0px);

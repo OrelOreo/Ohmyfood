@@ -27,7 +27,7 @@ img {
     img {
       height: 70vh;
       object-fit: cover;
-      o-object-fit: cover; } }
+   } }
 
 main {
   background: #f6f6f6;
@@ -43,7 +43,7 @@ main {
   width: 95%;
   background: #f6f6f6; }
   .titre-bloc h2 {
-    margin-left: 20px; }
+    margin-left: 5px; }
     @media screen and (min-width: 1024px) {
       .titre-bloc h2 {
         text-align: center;
@@ -73,27 +73,22 @@ main {
   width: 100%;
   height: 100px;
   background: #f6f6f6;
-  border-radius: 30px 30px 0px 0px; }
-  @media screen and (min-width: 750px) {
-    .sous-titre {
-      position: relative;
-      display: block; } }
+  border-radius: 30px 30px 0px 0px;
+  position: relative; }
   @media screen and (min-width: 750px) {
     .sous-titre h1 {
       text-align: center;
       margin-top: 20px; } }
+  @media screen and (min-width: 320px) and (max-width: 450px) {
+    .sous-titre h1 {
+      margin-left: -45px; } }
 
 .fa-heart {
   position: absolute;
   right: 20px;
-  top: 20px;
+  top: 40px;
   font-size: 18px;
   cursor: pointer; }
-  @media screen and (min-width: 750px) {
-    .fa-heart {
-      position: absolute;
-      top: 40px;
-      right: 15px; } }
 
 .heart-fill {
   color: transparent;
@@ -107,7 +102,7 @@ main {
   -o-transition: opacity 0.7s;
   transition: opacity 0.7s; }
 
-.fa-solid:active {
+.fa-solid:hover {
   opacity: 1; }
 
 @media screen and (min-width: 1024px) {
@@ -189,7 +184,8 @@ main {
   -ms-flex-pack: center;
   justify-content: center;
   background-color: #99E2D0;
-  opacity: 0; }
+  margin-right: -3.8rem;
+  transition: all 0.5s; }
   .anim-card .fa-solid {
     color: #99E2D0;
     background-color: white;
@@ -211,22 +207,21 @@ main {
     transition: transform 0.6s;
     transition: transform 0.6s, -webkit-transform 0.6s; }
 
-.card:active span {
+.card:hover span {
   -webkit-transform: translateX(-50px);
   -ms-transform: translateX(-50px);
   transform: translateX(-50px); }
 
-.card:active .anim-card {
-  -webkit-animation: animationCard 0.6s;
-  animation: animationCard 0.6s;
+.card:hover .anim-card {
+  margin-right: 0;
   opacity: 1; }
 
-.card:active .fa-solid {
+.card:hover .fa-solid {
   -webkit-transform: rotate(360deg);
   -ms-transform: rotate(360deg);
   transform: rotate(360deg); }
 
-.card:active p {
+.card:hover p {
   white-space: nowrap;
   -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
@@ -286,22 +281,13 @@ footer {
     footer .contact i {
       margin-right: 5px; }
 
-@keyframes animationCard {
-  from {
-    -webkit-transform: translateX(35px);
-    -ms-transform: translateX(35px);
-    transform: translateX(35px); }
-  to {
-    -webkit-transform: translateX(0px);
-    -ms-transform: translateX(0px);
-    transform: translateX(0px); } }
 @keyframes apparition {
-  from {
-    -webkit-transform: translateY(-10px);
-    -ms-transform: translateY(-10px);
-    transform: translateY(-10px);
+  0% {
+    -webkit-transform: translateY(10px);
+    -ms-transform: translateY(10px);
+    transform: translateY(10px);
     opacity: 0; }
-  to {
+  100% {
     -webkit-transform: translateY(0px);
     -ms-transform: translateY(0px);
     transform: translateY(0px);

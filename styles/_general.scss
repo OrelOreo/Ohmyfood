@@ -13,7 +13,7 @@ body{
     inset: 0;
     z-index: 100;
     opacity: 0.8;
-    animation: disappearLoader 3s forwards;
+    animation: disappearLoader 4s forwards;
 }
 .loader {
     display: block;
@@ -205,18 +205,19 @@ header {
 
 .info-cards .fa-heart{
     @include heartIcon;
+    top: 20px !important;
 }
 
 .info-cards .fa-solid {
     @include gradientHeart;
 }
 
-.bloc-heart:active .fa-solid{
+.bloc-heart:hover .fa-solid{
     opacity: 1;
 }
 
 .info-cards h3 {
-    font-weight: 400;
+    font-weight: 500;
     font-size: 18px;
 }
 .info-cards p {

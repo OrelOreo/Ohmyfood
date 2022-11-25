@@ -75,7 +75,7 @@
     -ms-flex-pack: center;
             justify-content: center;
     background-color:$third-color;
-    opacity: 0;
+    margin-right: -3.8rem;
 }
 
 @mixin iconInsideAnimCard {
@@ -120,7 +120,7 @@
 @mixin heartIcon {
     position: absolute;
     right: 20px;
-    top: 20px;
+    top: 40px;
     font-size: 18px;
     cursor: pointer;
 }
@@ -141,9 +141,7 @@
     width: 100%;
     height: 160px;
     border-radius: 10px 10px 0 0;
-    -o-object-fit: cover;
        object-fit: cover;
-    -o-object-position: center;
        object-position: center;
 }
 
@@ -163,6 +161,12 @@
     font-size: small;
     height: 80%;
 }
+@mixin betweenMobileAndLargeMobile{
+    @media screen and (min-width:320px) and (max-width:450px) {
+        @content;
+    }
+}
+
 @mixin large-mobile{
     @media screen and (min-width:map-get($breakpoints,largemobile)) {
         @content;
